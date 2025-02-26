@@ -1,0 +1,215 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.3s ease;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #222;
+    color: #fff;
+}
+
+/* Main Container */
+.container {
+    background: rgb(227, 207, 224);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    width: 420px;
+    max-width: 90%;
+    transition: 0.3s;
+}
+
+/* Title Styling */
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+}
+
+/* QR Code Image */
+.qr-image {
+    width: 180px;
+    height: 180px;
+    margin: 20px 0;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    padding: 5px;
+    transition: 0.3s;
+}
+
+/* Dynamic QR Code Styling */
+.qr-square { border-radius: 0; }
+.qr-rounded { border-radius: 15px; }
+.qr-circle { border-radius: 50%; }
+
+/* Form and Input Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+input {
+    padding: 12px;
+    width: 90%;
+    max-width: 350px;
+    border-radius: 8px;
+    border: 2px solid #aaa;
+    outline: none;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+/* Buttons Container */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Button Styles */
+button {
+    padding: 14px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.3s;
+}
+
+/* Individual Button Colors */
+.download-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.share-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.back-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Button Hover Effects */
+button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* Dark Mode Toggle */
+.dark-mode-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.dark-mode-toggle:hover {
+    background-color: #555;
+}
+
+/* Newly Added Options Section */
+.options-container {
+    margin-top: 20px;
+    padding: 20px;
+    background: #e3e3e3;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Color Picker Styling */
+.color-picker-container {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="color"] {
+    width: 50px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+input[type="color"]:hover {
+    transform: scale(1.1);
+}
+
+/* QR Code Shape Selection */
+.qr-shape-container, .qr-border-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+.qr-shape, .qr-border {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #eee;
+    transition: 0.3s;
+    border: 2px solid transparent;
+}
+.qr-shape.selected, .qr-border.selected {
+    background-color: #007bff;
+    color: white;
+    border-color: #0056b3;
+}
+.qr-shape:hover, .qr-border:hover {
+    background-color: #ddd;
+    border-color: #007bff;
+}
+
+/* File Upload Styling */
+.file-upload {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 15px;
+}
+.file-upload input {
+    padding: 8px;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.file-upload input:hover {
+    background-color: #f8f9fa;
+}

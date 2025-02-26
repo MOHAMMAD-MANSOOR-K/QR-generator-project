@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>QR Code Generator</h1>
+        
+        <form action="/" method="POST" enctype="multipart/form-data">
+            <input type="text" name="data" placeholder="Enter your URL or text..." required>
+            
+            <!-- Logo Upload >
+            <label for="logo">Upload Logo (Optional):</label>
+            <input type="file" name="logo" id="logo" accept="image/*"-->
+            
+            <!-- QR Code Shape Selection >
+            <label for="shape">Select QR Code Shape:</label>
+            <select name="shape" id="shape">
+                <option value="square">Square</option>
+                <option value="rounded">Rounded</option>
+                <option value="circular">Circular</option>
+            </select-->
+            
+            <!-- Border Style Selection -->
+            <!--label for="border">Select Border Style:</label>
+            <select name="border" id="border">
+                <option value="none">None</option>
+                <option value="dashed">Dashed</option>
+                <option value="solid">Solid</option>
+            </select-->
+            
+            <br><br>
+            <button type="submit" class="generate-btn">Generate QR Code</button>
+        </form>
+    </div>
+</body>
+</html>

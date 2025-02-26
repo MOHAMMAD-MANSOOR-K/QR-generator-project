@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/mk-logo.png') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Your QR Code is Ready</h1>
+        <img src="{{ url_for('static', filename='qrcode.png') }}" alt="QR Code" class="qr-image">
+
+        <div class="buttons">
+            <!-- Download Button -->
+            <a href="{{ url_for('static', filename='qrcode.png') }}" download="qrcode.png">
+                <button class="download-btn">⬇ Download</button>
+            </a>
+            
+            <!-- Share Button -->
+            <button class="share-btn" onclick="shareQRCode()">📤 Share</button>
+
+            <!-- Back Button -->
+            <a href="/">
+                <button class="back-btn">⬅ Back</button>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function shareQRCode() {
+            if (navigator.share) {
+                fetch("{{ url_for('static', filename='qrcode.png') }}")
+                    .then(response => response.blob())
+                    .then(blob => {
+                        const file = new File([blob], "qrcode.png", { type: "image/png" });
+                        navigator.share({
+                            title: "QR Code",
+                            text: "Check out this QR Code!",
+                            files: [file]
+                        }).then(() => console.log("Shared successfully"))
+                          .catch((error) => console.log("Error sharing:", error));
+                    })
+                    .catch(error => console.log("Failed to fetch QR code:", error));
+            } else {
+                alert("Sharing not supported on this browser.");
+            }
+        }
+    </script>
+</body>
+</html>
